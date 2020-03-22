@@ -9,7 +9,7 @@ public class DanceHall {
         double A = Double.parseDouble(scan.nextLine());
 
         double totolArea = (L*100)*(W*100);
-        double wardrobe = (A*A)*100;
+        double wardrobe = (A*100)*(A*100);
         double bench = totolArea/10;
 
         double freeSpace = totolArea-wardrobe-bench;
