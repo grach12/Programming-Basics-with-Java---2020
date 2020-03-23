@@ -16,7 +16,7 @@ public class SwimWorldRecord {
         double finalTime = time+delayTime;
 
 if (finalTime<worldSwimRecord){
-    System.out.printf("Yes, he succeed! The new world record is %.2f seconds.", finalTime);
+    System.out.printf("Yes, he succeeded! The new world record is %.2f seconds.", finalTime);
 }
 else {
     double secondsLeft = finalTime-worldSwimRecord;
