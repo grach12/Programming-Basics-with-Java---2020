@@ -15,6 +15,9 @@ double allFlowers = (mango+zumbo+roses+cactu)*0.95;
 if (priceGift>allFlowers){
     System.out.printf("She will have to borrow %.0f leva.", Math.ceil(priceGift-allFlowers));
 }
+else{
+    System.out.printf("She is left with %.0f leva.", Math.floor(allFlowers-priceGift));
+}
 
     }
 }
