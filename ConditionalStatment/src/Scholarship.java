@@ -11,15 +11,13 @@ public class Scholarship {
         double socialScholarship;
         double gradeScholarship;
 
-        if(grade>=5.5){
-            gradeScholarship = Math.floor(grade*25);
+        if (grade >= 5.5) {
+            gradeScholarship = Math.floor(grade * 25);
             System.out.printf("You get a scholarship for excellent results %.0f BGN", gradeScholarship);
-        }
-        else if ((income<salary)&&(grade>=4.5)){
-            socialScholarship = Math.floor(salary*0.35);
+        } else if ((income < salary) && (grade >= 4.5)) {
+            socialScholarship = Math.floor(salary * 0.35);
             System.out.printf("You get a Social scholarship %.0f BGN", socialScholarship);
-        }
-        else{
+        } else {
             System.out.println("You cannot get a scholarship!");
         }
     }
