@@ -20,7 +20,7 @@ public class Flowers {
                 double tuliPrice = 2.50*tulipCount;
                 allflowerPrice = chrysaPrice + rosePrice + tuliPrice;
                 if (tulipCount > 7) {
-                    allflowerPrice *= 0.9;
+                    allflowerPrice *= 0.95;
                 }
                 break;
             case "Summer":
