@@ -8,16 +8,30 @@ public class CarToGo {
         String season = scan.nextLine();
 
         String clas = "";
-        String carType="";
+        String carType = "";
 
 
-        if (budget>500){
+        if (budget > 500) {
             clas = "Luxury class";
             carType = "Jeep";
-            budget*=0.9;
-        }
-        else if ((budget>100)&&(budget<=500)){
-
+            budget *= 0.9;
+        } else if ((budget > 100) && (budget <= 500)) {
+            clas = "Compact class";
+            if (season.equals("Summer")) {
+                budget *= 0.45;
+                carType = "Cabrio";
+            } else if (season.equals("Winter")) {
+                budget *= 0.8;
+                carType = "Jeep";
+            }
+        } else if ((budget <= 100) && (season.equals("Summer"))) {
+            budget *= 0.35;
+            clas = "Economy class";
+            carType = "Cabrio";
+        } else if ((budget <= 100) && (season.equals("Winter"))) {
+            budget *= 0.65;
+            clas = "Economy class";
+            carType = "Jeep";
         }
 
         System.out.printf("%s%n%s - %.2f", clas, carType, budget);
