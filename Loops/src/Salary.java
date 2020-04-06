@@ -7,7 +7,7 @@ public class Salary {
         int tabs = Integer.parseInt(scan.nextLine());
         int salary = Integer.parseInt(scan.nextLine());
 
-        for (int i = 0; i < tabs ; i++) {
+        for (int i = 0; i < tabs; i++) {
             String site = scan.nextLine();
 
             switch (site) {
@@ -22,12 +22,12 @@ public class Salary {
                     break;
             }
             if (salary <= 0) {
-                System.out.printf("You lost your salary");
+                System.out.print("You have lost your salary.");
                 break; //break чупи цикъла
             }
         }
-          if (salary>=0){
-            System.out.printf("%.2f", salary);
+        if (salary > 0) {
+            System.out.printf("%.0f", salary*1.0);
+        }
     }
-}
 }
