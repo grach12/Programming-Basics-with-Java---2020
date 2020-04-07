@@ -9,15 +9,22 @@ public class Hospital {
         int cured = 0;
         int fucked = 0;
 
-        int total = 0;
-        for (int i = 0; i < days; i++) {
+        int doctors = 7;
+
+        for (int i = 1; i <= days; i++) {
             int patients = Integer.parseInt(scan.nextLine());
-            total = total + patients;
-            if (patients>7){
-                fucked= patients-fucked;
+
+            if ((i % 3 == 0) && (fucked > cured)) {
+                doctors++;
+            }
+            if (patients > doctors) {
+                cured += doctors;
+                fucked += patients - doctors;
+            } else {
+                cured += patients;
             }
         }
-            System.out.println(cured);
-            System.out.println(fucked);
-        }
+        System.out.printf("Treated patients: %d.%n", cured);
+        System.out.printf("Untreated patients: %d.", fucked);
     }
+}
