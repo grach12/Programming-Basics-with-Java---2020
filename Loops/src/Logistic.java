@@ -14,35 +14,36 @@ public class Logistic {
         double priceTrain = 0;
 
         double allWeight = 0;
-        double averagePrice = 0;
+        double averagePrice;
 
         for (int i = 0; i < n; i++) {
             double weight = Double.parseDouble(scan.nextLine());
             allWeight = weight + allWeight;
 
             if (weight <= 3) {
+                priceBus = priceBus+weight * 200;
                 bus = bus + weight;
-                priceBus = weight * 200;
-            } else if (weight > 3) {
+            } else if ((weight >=4)&&(weight<=11)) {
+                priceTruck = priceTruck+weight * 175;
                 truck = truck + weight;
-                priceTruck = weight * 175;
             } else if (weight >= 12) {
+                priceTrain = priceTrain+weight * 120;
                 train = train + weight;
-                priceTrain = weight * 120;
-
             }
         }
 
         averagePrice = (priceBus + priceTruck + priceTrain) / allWeight;
 
-        double percenBus = priceBus / allWeight * 100;
-        double percenTruck = priceTruck / allWeight * 100;
-        double percenTrain = priceTrain / allWeight * 100;
+        double percenBus =   bus*100/allWeight;
+        double percenTruck = truck*100 / allWeight;
+        double percenTrain = train*100 / allWeight;
 
 
-        System.out.println(averagePrice);
-        System.out.printf("%.2f %% %n", percenBus);
-        System.out.printf("%.2f %% %n", percenTruck);
-        System.out.printf("%.2f %%", percenTrain);
+        System.out.printf("%.2f%n",averagePrice);
+
+
+        System.out.printf("%.2f%%%n", percenBus);
+        System.out.printf("%.2f%%%n", percenTruck);
+        System.out.printf("%.2f%%", percenTrain);
     }
 }
