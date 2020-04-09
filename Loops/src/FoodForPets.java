@@ -11,18 +11,19 @@ public class FoodForPets {
 double cookies = 0;
 double cats=0;
 double dogs=0;
-double eatenFood = totalFood;
+double eatenFood = 0;
 
-        for (int i = 0; i <days ; i++) {
+
+        for (int i = 1; i <=days ; i++) {
             double dogFood = Double.parseDouble(scan.nextLine());
             double catFood = Double.parseDouble(scan.nextLine());
             dogs = dogs+dogFood;
             cats= cats+catFood;
             eatenFood=dogs+cats;
 
-            if (days % 3 == 0) {
+            if (i % 3 == 0) {
                // System.out.println(dogFood+catFood);
-                cookies=(dogFood+catFood)*0.1;
+                cookies+=(dogFood+catFood)*0.1;
                 //cookies++;
             }
         }
