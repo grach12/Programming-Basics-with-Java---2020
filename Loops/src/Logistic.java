@@ -34,7 +34,7 @@ public class Logistic {
 
         averagePrice = (priceBus + priceTruck + priceTrain) / allWeight;
 
-        double percenBus =   bus*100/allWeight;
+        double percenBus =   bus*100 / allWeight;
         double percenTruck = truck*100 / allWeight;
         double percenTrain = train*100 / allWeight;
 
