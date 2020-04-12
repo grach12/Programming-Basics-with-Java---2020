@@ -8,12 +8,12 @@ public class Password {
         String password = scan.nextLine();
 
         String inputPassword = scan.nextLine();
-int failedAttemd = 0;
+        int failedAttemd = 0;
         while (!inputPassword.equals(password)) {
             inputPassword = scan.nextLine();
-          //  failedAttemd++;
+            //  failedAttemd++;
         }
         System.out.printf("Welcome %s!", username);
-      //  System.out.println(failedAttemd);
+        //  System.out.println(failedAttemd);
     }
 }
