@@ -6,8 +6,8 @@ public class ReportSystem {
 
         double toCollect = Double.parseDouble(scan.nextLine());
 
-//        double cardPayment = 0;
-//        double cashPayment = 0;
+       int cardPayment = 0;
+       int cashPayment = 0;
 
         double sumCard = 0;
         double sumCash = 0;
@@ -18,15 +18,23 @@ public class ReportSystem {
         double averageCS = 0;
         double averageCC = 0;
 
+        String readtext = "0";
 
-        String readtext = scan.nextLine();
+        int paymentCounter=0;
 
         while (!"End".equals(readtext)) {
-            int cashPayment = Integer.parseInt(readtext);
+            int payment = Integer.parseInt(readtext);
             readtext = scan.nextLine();
-            int cardPayment = Integer.parseInt(readtext);
+            paymentCounter++;
+            System.out.println(paymentCounter);
+            if (paymentCounter%2==0){
+                payment=cardPayment;
+            }else {
+                payment=cashPayment;
+            }
 
-            if (cashPayment > 100) {
+
+            if ((cashPayment > 100)) {
                 System.out.println("Error in transaction!");
             } else if (cashPayment < 100) {
                 System.out.println("Product sold!");
@@ -35,7 +43,7 @@ public class ReportSystem {
             }
             if (cardPayment < 10) {
                 System.out.println("Error in transaction!");
-            } else if (cardPayment > 10) {
+            } else if(cardPayment > 10) {
                 System.out.println("Product sold!");
                 sumCard = sumCard + cardPayment;
                 cardCount++;
