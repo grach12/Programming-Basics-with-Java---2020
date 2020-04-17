@@ -6,9 +6,6 @@ public class ReportSystem {
 
         double toCollect = Double.parseDouble(scan.nextLine());
 
-       int cardPayment = 0;
-       int cashPayment = 0;
-
         double sumCard = 0;
         double sumCash = 0;
 
@@ -18,37 +15,34 @@ public class ReportSystem {
         double averageCS = 0;
         double averageCC = 0;
 
-        String readtext = "0";
+        String readtext = scan.nextLine();
+         readtext = "0";
 
-        int paymentCounter=0;
+        int paymentCounter = 0;
 
         while (!"End".equals(readtext)) {
-            int payment = Integer.parseInt(readtext);
-            readtext = scan.nextLine();
             paymentCounter++;
-            System.out.println(paymentCounter);
-            if (paymentCounter%2==0){
-                payment=cardPayment;
-            }else {
-                payment=cashPayment;
-            }
+            int payment = Integer.parseInt(readtext);
 
-
-            if ((cashPayment > 100)) {
-                System.out.println("Error in transaction!");
-            } else if (cashPayment < 100) {
-                System.out.println("Product sold!");
-                sumCash = sumCash + cashPayment;
-                cashCount++;
+         //   System.out.println(paymentCounter);
+            if (paymentCounter % 2 != 0) {
+                if ((payment > 100)) {
+                    System.out.println("Error in transaction!");
+                } else if (payment < 100) {
+                    System.out.println("Product sold!");
+                    sumCash = sumCash + payment;
+                    cashCount++;
+                }
             }
-            if (cardPayment < 10) {
-                System.out.println("Error in transaction!");
-            } else if(cardPayment > 10) {
-                System.out.println("Product sold!");
-                sumCard = sumCard + cardPayment;
-                cardCount++;
+            if (paymentCounter % 2 == 0) {
+                if (payment < 10) {
+                    System.out.println("Error in transaction!");
+                } else if (payment > 10) {
+                    System.out.println("Product sold!");
+                    sumCard = sumCard + payment;
+                    cardCount++;
+                }
             }
-
             if (sumCard + sumCash >= toCollect) {
                 averageCS = sumCash / cashCount;
                 averageCC = sumCard / cardCount;
@@ -56,6 +50,7 @@ public class ReportSystem {
             }
 
             readtext = scan.nextLine();
+
         }
 
         if ("End".equals(readtext)) {
