@@ -4,33 +4,36 @@ public class TournamentForChristmass {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        double money = 20;
-
-        int winMoney = 0;
-        int looseMoney = 0;
-
-        String sport = "";
-
-        int day = Integer.parseInt(scan.nextLine());
-
-        for (int i = 0; i < day; i++) {
-            while (!"Finish".equals(sport)) {
-                sport = scan.nextLine();
-
-                if ("win".equals(sport)) {
-                    winMoney++;
-                    money += money;
-                } else if ("lose".equals(sport)) {
-                    looseMoney++;
+        int days = Integer.parseInt (scan.nextLine ());
+        boolean win     = false;
+        boolean winT    = false;
+        double  money   = 0;
+        for (int i = 1; i <= days; i++) {
+            String event = scan.nextLine ();
+            double daymMoney = 0.0;
+            while (!event.equals ("Finish")) {
+                String result = scan.nextLine ();
+                if (result.equals ("win")) {
+                    win = true;
+                    daymMoney += 20;
+                } else if (result.equals ("lose")) {
+                    win = false;
+                } else if (result.equals ("Finish")) {
+                    break;
                 }
             }
-            if (winMoney > looseMoney) {
-                money *= 1.1;
+            if (win) {
+                money += daymMoney * 1.1;
+                winT = true;
+            } else {
+                money += daymMoney;
+                winT = false;
             }
         }
-        if (winMoney > looseMoney) {
-            money *= 1.2;
+        if (!winT) {
+            System.out.printf ("You lost the tournament! Total raised money: %.2f",money);
+        } else {
+            System.out.printf ("You won the tournament! Total raised money: %.2f",money * 1.2);
         }
-        System.out.println(money);
     }
 }
