@@ -9,8 +9,12 @@ public class StreamOfLetters {
 
         while (!"End".equals(input)){
              char n  = input.charAt(0);
-             if ((n<32) || (n>127)){
-                 break;
+             if (!((n<32) || (n>127))){
+
+
+
+
+
             }
 
 
