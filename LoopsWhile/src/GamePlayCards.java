@@ -15,15 +15,12 @@
 //        String winner = "";
 //
 //        int winnerPoints = 0;
-//
-//        String cardOne="";
-//        String cardTwo="";
-//
-//        while ((!("End of game".equals(cardOne))||(!("End of game".equals(cardTwo))))){
-//            cardOne = scan.nextLine();
-//
-//
-//            cardTwo = (scan.nextLine());
+//        int cardOne = 0;
+//        int cardTwo = 0;
+//       String endOfGame = scan.nextLine();
+//        while (!"End of game".equals(endOfGame)) {
+//            cardOne = Integer.parseInt(scan.nextLine());
+//            cardTwo = Integer.parseInt(scan.nextLine());
 //
 //            if (cardOne > cardTwo) {
 //                pointsOne = cardOne - cardTwo;
@@ -47,15 +44,15 @@
 //                ;break;
 //            }
 //
-//
+//            endOfGame = scan.nextLine();
 //        }
 //
 //
 //
 //
-//        //    if (pointsOne > pointsTwo) {
+//      //    if (pointsOne > pointsTwo) {
 //        //    System.out.printf("%s has %d points%n%s has %d points", playerOne, pointsOne, playerTwo, pointsTwo);
-//        //      }
+//  //      }
 //
 //    }
 //}

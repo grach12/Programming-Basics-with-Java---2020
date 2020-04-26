@@ -11,9 +11,9 @@ public class VetParking {
         double sumDay = 0;
 double sumTicket = 0 ;
 
-        for (int i = 0; i < days; i++) {
+        for (int i = 1; i <= days; i++) {
 
-            for (int j = 0; j < hours; j++) {
+            for (int j = 1; j <= hours; j++) {
 
                 if ((j % 2 != 0) && (i % 2 == 0)) {
                     ticket = 1.25;
@@ -25,8 +25,8 @@ double sumTicket = 0 ;
                 sumDay += ticket;
 
             }
-            sumTicket = ticket;
-            System.out.println("SumDay " + sumTicket);
+           // sumTicket = ticket;
+            System.out.println("SumDay " + sumDay);
         }
 
         System.out.println("SumTotal " + sumDay);
