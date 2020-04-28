@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class CinemaTickets {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
         String input = scan.nextLine();
         int studentCounter = 0;
         int standartCounter = 0;
@@ -11,13 +10,14 @@ public class CinemaTickets {
 
         while (!"Finish".equals(input)) {
             int seatsCount = Integer.parseInt(scan.nextLine());
-            int currentFilmcounter = 0;
+            int peopleCounter  = 0;
             for (int i = 0; i < seatsCount; i++) {
                 String ticketType = scan.nextLine();
                 if (ticketType.equals("End")) {
                     break;
                 }
-                currentFilmcounter++;
+
+                peopleCounter ++;
                 switch (ticketType) {
                     case "student":
                         studentCounter++;
@@ -30,7 +30,7 @@ public class CinemaTickets {
                         break;
                 }
             }
-            double percent = currentFilmcounter * 1.0 / seatsCount * 100;
+            double percent = peopleCounter  * 1.0 / seatsCount * 100;
             System.out.printf("%s - %.2f%% full.%n", input, percent);
 
             input = scan.nextLine();
@@ -38,9 +38,9 @@ public class CinemaTickets {
 
         int peopleCount = studentCounter + standartCounter + kidCounter;
         System.out.printf("Total tickets: %d%n", peopleCount);
-        System.out.printf("%.2f%% student tickets%n", studentCounter * 1.0 / peopleCount * 100);
-        System.out.printf("%.2f%% standart tickets%n", standartCounter * 1.0 / peopleCount * 100);
-        System.out.printf("%.2f%% kids tickets%n", kidCounter * 1.0 / peopleCount * 100);
+        System.out.printf("%.2f%% student tickets.%n", studentCounter * 1.0 / peopleCount * 100);
+        System.out.printf("%.2f%% standard tickets.%n", standartCounter * 1.0 / peopleCount * 100);
+        System.out.printf("%.2f%% kids tickets.%n", kidCounter * 1.0 / peopleCount * 100);
     }
 }
 
