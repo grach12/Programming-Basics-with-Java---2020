@@ -9,7 +9,7 @@ public class VetParking {
 
         double ticket = 0;
         double sumDay = 0;
-double sumTicket = 0 ;
+        double sumTicket = 0 ;
 
         for (int i = 1; i <= days; i++) {
 
