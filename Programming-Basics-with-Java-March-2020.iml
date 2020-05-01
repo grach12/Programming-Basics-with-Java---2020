@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Loops/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/NestedLoops/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/LoopsWhile/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ExamPreparation/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
